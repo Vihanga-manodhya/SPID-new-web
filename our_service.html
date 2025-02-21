@@ -1,94 +1,279 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services</title>
+    <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            box-sizing: border-box;
         }
-        .container {
-            text-align: center;
+        
+        .services-container {
+            background-color: #fff;
+            color: #000;
+            font: 400 24px Poppins, sans-serif;
+            overflow: hidden;
+        }
+        
+        .title-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
             padding: 20px;
-            background-image: url('./assets/images/Irrigation-Field.jpg'); /* Replace with your image */
+            display: flex;
+            justify-content: flex-start;  /* Changed from center to flex-start */
+            align-items: center;
+        }
+
+        .services-title {
+            text-align: left;  /* Changed from center to left */
+            font-size: 40px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+        
+        .services-grid-container {
+            width: 100%;
+            margin: 0 auto;
+            background-image: url('https://cdn.builder.io/api/v1/image/assets/TEMP/baa1df21017cf15a2409d799348e4495be6758ba830cc73b4372dbbae6e8fa16?placeholderIfAbsent=true&apiKey=b95b11524e6e406ba5124afb5d96b2f4');
             background-size: cover;
             background-position: center;
-        }
-        h1 {
-            color: #eadbdb;
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .service-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
+            min-height:auto;
             text-align: center;
-            width: 150px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
+
+        .services-wrapper {
+            width: 100%;  /* Added width */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-sizing: border-box;  /* Added box-sizing */
+        }
+        
+        .service-item {
+            background: transparent;
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            background-color: #fff;
+            border-radius: 50%;  /* Make it completely round */
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+        
         .service-number {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 900;
+            color: #333;
         }
-        .click-here {
-            display: block;
-            margin-top: 10px;
+        
+        .service-content {
+            background-color: #fff;
+            border-radius: 5px;  /* More rounded corners */
+            height: 50px;  /* Fixed height as requested */
+            padding: 0 20px;  /* Adjusted padding for the new height */
+            flex-grow: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .service-title {
+            font-size: 18px;
+            margin: 0;  /* Remove margin for vertical centering */
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .service-link {
+            font-size: 14px;
+            font-weight: 500;
             text-decoration: none;
-            color: #007bff;
+            color: #0c68f3;
+            transition: color 0.3s ease;
         }
-        @media (max-width: 600px) {
-            .service-box {
-                width: 90%;
+        
+        .service-link:hover {
+            color: #000;
+        }
+        
+        @media (max-width: 991px) {
+            .services-wrapper {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .title-container {
+                margin-bottom: 30px;
+            }
+            .service-item {
+                flex-direction: row;  /* Keep horizontal layout on mobile */
+                align-items: center;
+            }
+            
+            .service-icon {
+                margin: 0 auto;
+            }
+            
+            .service-content {
+                text-align: left;  /* Keep left alignment */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-wrapper {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>OUR SERVICES</h1>
-    <div class="services">
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
+    <div class="services-container">
+        <div class="title-container">
+            <h2 class="services-title">OUR SERVICES</h2>
         </div>
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
-        </div>
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
-        </div>
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
-        </div>
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
-        </div>
-        <div class="service-box">
-            <div class="service-number">1</div>
-            service service
-            <a href="#" class="click-here">click here</a>
+        <div class="services-grid-container">
+            <div class="services-wrapper">
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">1</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">2</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">3</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">4</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">5</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">6</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">7</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">8</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">9</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service </h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">10</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">11</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            
+                <div class="service-item">
+                  <div class="service-icon">
+                    <span class="service-number">12</span>
+                  </div>
+                  <div class="service-content">
+                    <h3 class="service-title">Service</h3>
+                    <a href="#" class="service-link">Click here</a>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 </html>
