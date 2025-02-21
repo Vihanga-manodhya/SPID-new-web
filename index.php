@@ -111,7 +111,7 @@
         <div class="language-block">
           <h2>ආයූබෝවන්</h2>
           <p>Official website of the Southern Province Irrigation Department</p>
-          <button class="btn-language">hello hello</button>
+          <button class="btn-language">සිංහල</button>
         </div>
       </div>
 
