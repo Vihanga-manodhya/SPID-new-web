@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SPID</title>
-    
+
     <!-- Bootstrap CSS -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="../assets/css/all.min.css">
-    
+
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -32,17 +34,17 @@
             color: #fff;
             padding: 40px 0 0 0;
         }
-        
+
         .footer-links li {
             margin-bottom: 8px;
         }
-        
+
         .footer-links a {
             display: block;
             padding: 2px 0;
             transition: all 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: #dadada !important;
             padding-left: 8px;
@@ -52,7 +54,7 @@
             max-width: 100%;
             height: auto;
         }
-        
+
         .vcount_bar {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #000000;
@@ -61,7 +63,7 @@
             margin-top: 30px;
             text-align: center;
         }
-        
+
         .vctxt {
             font-size: 14px;
             line-height: 1.4;
@@ -79,25 +81,25 @@
             .footer {
                 padding: 30px 0 0 0;
             }
-            
+
             .footer-column {
                 margin-bottom: 20px;
             }
-            
+
             .footer-links {
                 margin-bottom: 15px;
             }
-            
+
             .footer h3 {
                 margin-top: 15px;
                 margin-bottom: 10px;
                 font-size: 1.2rem;
             }
-            
+
             .vctxt {
                 font-size: 14px;
             }
-            
+
             .footer .widget img {
                 max-width: 200px;
                 margin-bottom: 15px;
@@ -109,20 +111,20 @@
             .footer {
                 padding: 20px 0 0 0;
             }
-            
+
             .footer-links li {
                 margin-bottom: 6px;
             }
-            
+
             .vcount_bar {
                 padding: 12px 0;
                 margin-top: 20px;
             }
-            
+
             .footer .award-img {
                 width: 40% !important;
             }
-            
+
             .vctxt {
                 font-size: 12px;
             }
@@ -131,7 +133,7 @@
         .social-icons {
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             display: inline-block;
             width: 35px;
@@ -144,29 +146,30 @@
             margin-right: 10px;
             transition: all 0.3s ease;
         }
-        
+
         .social-icons a:hover {
             transform: translateY(-3px);
             color: #fff;
         }
-        
+
         .social-icons .fa-facebook:hover {
             background: #3b5998;
         }
-        
+
         .social-icons .fa-whatsapp:hover {
             background: #25d366;
         }
-        
+
         .social-icons .fa-youtube:hover {
             background: #ff0000;
         }
-        
+
         .social-icons .fa-instagram:hover {
             background: #e4405f;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Main Content Block -->
@@ -260,6 +263,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
