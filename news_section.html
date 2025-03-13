@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        .news-section {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .news-items {
+            display: block;
+            padding: 40px;
+            background-color: #fff;
+        }
+        
+        .news-item {
+            padding: 20px 30px;
+            background-color: #fff;
+            border-left: 2px solid #ddd;
+            border-right: 2px solid #ddd;
+            margin: 0;
+        }
+
+        .news-item:last-child {
+            border-right: 2px solid #ddd;
+        }
+
+        .owl-item {
+            margin: 0 -1px; /* Fix double border between items */
+        }
+
+        @media (min-width: 1920px) {
+            .news-section {
+                padding: 40px 60px;
+            }
+            .news-items {
+                padding: 60px;
+            }
+        }
+
+        @media (max-width: 1366px) {
+            .news-section {
+                max-width: 100%;
+                padding: 20px;
+            }
+            .news-items {
+                padding: 30px;
+            }
+            .news-item {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .news-items {
+                flex-direction: column;
+            }
+            .news-item {
+                flex: 0 0 100%;
+                min-height: 150px;
+            }
+        }
+
+        .news-header {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          margin-bottom: 40px;
+          gap: 20px;
+        }
+        .news-header-line-right {
+          height: 1px;
+          width: 233px;
+          position: relative;
+          background-color: #777;
+        }
+        @media (max-width: 991px) {
+          .news-header-line-right {
+            width: 150px;
+          }
+        }
+        @media (max-width: 640px) {
+          .news-header-line-right {
+            width: 80px;
+          }
+        }
+        .news-title {
+          color: #000;
+          font: 700 36px Montserrat, sans-serif;
+        }
+        @media (max-width: 991px) {
+          .news-title {
+            font-size: 32px;
+          }
+        }
+        @media (max-width: 640px) {
+          .news-title {
+            font-size: 24px;
+          }
+        }
+        .news-header-line-left {
+          height: 1px;
+          width: 233px;
+          position: relative;
+          background-color: #777;
+        }
+        @media (max-width: 991px) {
+          .news-header-line-left {
+            width: 150px;
+          }
+        }
+        @media (max-width: 640px) {
+          .news-header-line-left {
+            width: 80px;
+          }
+        }
+        @media (max-width: 991px) {
+          .news-header {
+            gap: 15px;
+          }
+          .news-header-line-right,
+          .news-header-line-left {
+            width: 150px;
+          }
+        }
+        @media (max-width: 640px) {
+          .news-header {
+            gap: 10px;
+          }
+          .news-header-line-right,
+          .news-header-line-left {
+            width: 80px;
+          }
+        }
+        .news-carousel {
+          width: 100%;
+          padding: 0;
+        }
+        @media (max-width: 640px) {
+          .news-carousel {
+            padding: 0 20px;
+          }
+        }
+        .nav-arrow {
+          display: none;
+        }
+        .news-content {
+          padding: 0;
+          margin: 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .news-headline {
+          color: #000;
+          font: 700 16px/20px Montserrat, sans-serif;
+        }
+        @media (max-width: 640px) {
+          .news-headline {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+        .news-date {
+          color: #000;
+          font: 400 14px Montserrat, sans-serif;
+        }
+        @media (max-width: 640px) {
+          .news-date {
+            font-size: 12px;
+          }
+        }
+        .news-source {
+          color: #000;
+          font: 500 14px Montserrat, sans-serif;
+        }
+        @media (max-width: 640px) {
+          .news-source {
+            font-size: 12px;
+          }
+        }
+        .view-more-container {
+          width: 100%;
+          height: 119px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+        }
+        .view-more-button {
+          width: 140px;
+          height: 50px;
+          border: 1px solid #000;
+          border-radius: 5px;
+          background: transparent;
+          color: #000;
+          cursor: pointer;
+          font: 600 16px Montserrat, sans-serif;
+        }
+        @media (max-width: 640px) {
+          .view-more-button {
+            width: 120px;
+            height: 45px;
+            font-size: 14px;
+          }
+        }
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+      </style>
+</head>
+<body>
+    
+      
+      <section class="news-section container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <header class="news-header">
+                  <div class="news-header-line-right" aria-hidden="true"></div>
+                  <h2 class="news-title">NEWS</h2>
+                  <div class="news-header-line-left" aria-hidden="true"></div>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="news-carousel">
+                    <div class="news-items owl-carousel owl-theme" id="newsItems">
+                        <article class="news-item">
+                            <div class="news-content">
+                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
+                                <p class="news-date">Published on: 2025-03-01</p>
+                                <p class="news-source">Irrigation Department Head Office</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-content">
+                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
+                                <p class="news-date">Published on: 2025-03-01</p>
+                                <p class="news-source">Irrigation Department Head Office</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-content">
+                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
+                                <p class="news-date">Published on: 2025-03-01</p>
+                                <p class="news-source">Irrigation Department Head Office</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view-more-container">
+          <button class="view-more-button">View more</button>
+        </div>
+      </section>
+    <!-- Add jQuery and Owl Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("#newsItems").owlCarousel({
+                items: 3,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                margin: 0,
+                nav: false,
+                dots: false,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    768:{
+                        items: 2
+                    },
+                    992:{
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
