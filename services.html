@@ -8,159 +8,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
+        /* Only keep styles that Bootstrap doesn't provide */
         .services-title-line {
             height: 1px;
             width: 160px;
             background-color: #777;
         }
-        .services-title {
-            color: #000;
-            text-transform: uppercase;
-            font: 700 28px Inter, sans-serif;
+        @media (max-width: 768px) {
+            .services-title-line { width: 100px; }
         }
-        .view-more-button {
-            color: #000;
-            border: 1px solid #000;
-            border-radius: 5px;
-            padding: 0.5rem 1.25rem;
-            font: 700 14px Montserrat, sans-serif;
-            background: none;
-            margin-top: 10px;
-        }
-        .owl-carousel .item {
-            padding: 0 15px;
-        }
-        .card-body {
-            padding: 12px 15px;
-        }
-        .card-title {
-            font-size: 12px !important;
-            line-height: 1.2;
-            margin-bottom: 4px;
-        }
-        .card-text {
-            font-size: 11px;
-            margin-top: 4px !important;
-            line-height: 1.1;
-        }
-        .card {
-            border: none;
-            position: relative;
-            margin: none;
-        }
-        .card::before, .card::after {
+        .card::after {
             content: '';
             position: absolute;
-            top: 15px;
-            bottom: 15px;
-            width: 1px;
-            background-color: rgba(0,0,0,.125);
+            right: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 1.5px;
+            background-color: #000;
         }
-        .card::before { left: -15px; }
-        .card::after { right: -15px; }
-        .card img {
-            max-height: 160px;
-            padding: 10px;
-        }
-        .owl-carousel .item:first-child .card {
-            border-left: none;
-        }
-        .owl-carousel .item:last-child .card {
-            border-right: none;
-        }
-        .py-5 {
-            padding-top: 2rem !important;
-            padding-bottom: 2rem !important;
-        }
-        .mb-5 {
-            margin-bottom: 1.5rem !important;
-        }
-        .mt-3 {
-            margin-top: 0.5rem !important;
-        }
-        @media (max-width: 768px) {
-            .services-title { font-size: 24px; }
-            .services-title-line { width: 100px; }
-            .card img { max-height: 150px; }
-        }
-        @media (max-width: 576px) {
-            .card img { max-height: 130px; }
-            .card {
-                min-height: 380px;
-            }
-            .card img { 
-                max-height: 200px;
-                height: 200px;
-                object-fit: cover;
-                padding: 5px;
-            }
-            .card-body {
-                padding: 10px;
-                min-height: 180px;
-            }
-            .card-title {
-                font-size: 14px !important;
-                margin-bottom: 8px;
-            }
-            .card-text {
-                font-size: 12px;
-                margin-top: 6px !important;
-            }
+        .owl-carousel .item:last-child .card::after {
+            display: none;
         }
     </style>
 </head>
 <body>
     <section class="container-fluid bg-white py-5">
-        <div class="text-center mb-5">
+        <div class="text-center mb-4">
             <div class="d-flex align-items-center justify-content-center gap-4">
                 <div class="services-title-line"></div>
-                <h2 class="services-title m-0">Services</h2>
+                <h2 class="m-0 text-uppercase fw-bold fs-4">Services</h2>
                 <div class="services-title-line"></div>
             </div>
         </div>
 
         <div class="owl-carousel owl-theme">
-            <div class="item">
-                <div class="card h-100">
+            <div class="item px-2">
+                <div class="card h-100 border-0 position-relative">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a987828e92a5fc2c40590843c138c881c9e56223" 
-                         class="card-img-top" alt="Water Management Summit">
-                    <div class="card-body">
-                        <h3 class="card-title h5 fw-bold">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
-                        <p class="card-text mt-3">Published on: 2025-03-04</p>
-                        <p class="card-text fw-500">Irrigation Department Head Office</p>
+                         class="card-img-top p-2" alt="Water Management Summit" style="max-height:160px;object-fit:cover">
+                    <div class="card-body p-3">
+                        <h3 class="card-title h6 fw-bold mb-1">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
+                        <p class="card-text small mt-2">Published on: 2025-03-04</p>
+                        <p class="card-text small fw-500">Irrigation Department Head Office</p>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="card h-100">
+            <div class="item px-2">
+                <div class="card h-100 border-0 position-relative">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a987828e92a5fc2c40590843c138c881c9e56223" 
-                         class="card-img-top" alt="Water Management Summit">
-                    <div class="card-body">
-                        <h3 class="card-title h5 fw-bold">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
-                        <p class="card-text mt-3">Published on: 2025-03-04</p>
-                        <p class="card-text fw-500">Irrigation Department Head Office</p>
+                         class="card-img-top p-2" alt="Water Management Summit" style="max-height:160px;object-fit:cover">
+                    <div class="card-body p-3">
+                        <h3 class="card-title h6 fw-bold mb-1">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
+                        <p class="card-text small mt-2">Published on: 2025-03-04</p>
+                        <p class="card-text small fw-500">Irrigation Department Head Office</p>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="card h-100">
+            <div class="item px-2">
+                <div class="card h-100 border-0 position-relative">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a987828e92a5fc2c40590843c138c881c9e56223" 
-                         class="card-img-top" alt="Water Management Summit">
-                    <div class="card-body">
-                        <h3 class="card-title h5 fw-bold">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
-                        <p class="card-text mt-3">Published on: 2025-03-04</p>
-                        <p class="card-text fw-500">Irrigation Department Head Office</p>
+                         class="card-img-top p-2" alt="Water Management Summit" style="max-height:160px;object-fit:cover">
+                    <div class="card-body p-3">
+                        <h3 class="card-title h6 fw-bold mb-1">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
+                        <p class="card-text small mt-2">Published on: 2025-03-04</p>
+                        <p class="card-text small fw-500">Irrigation Department Head Office</p>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="card h-100">
+            <div class="item px-2">
+                <div class="card h-100 border-0 position-relative">
                     <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a987828e92a5fc2c40590843c138c881c9e56223" 
-                         class="card-img-top" alt="Water Management Summit">
-                    <div class="card-body">
-                        <h3 class="card-title h5 fw-bold">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
-                        <p class="card-text mt-3">Published on: 2025-03-04</p>
-                        <p class="card-text fw-500">Irrigation Department Head Office</p>
+                         class="card-img-top p-2" alt="Water Management Summit" style="max-height:160px;object-fit:cover">
+                    <div class="card-body p-3">
+                        <h3 class="card-title h6 fw-bold mb-1">NATIONAL WATER MANAGEMENT SUMMIT 2025 - REGISTER NOW!</h3>
+                        <p class="card-text small mt-2">Published on: 2025-03-04</p>
+                        <p class="card-text small fw-500">Irrigation Department Head Office</p>
                     </div>
                 </div>
             </div>
@@ -168,7 +90,7 @@
         </div>
 
         <div class="text-center mt-3">
-            <button class="view-more-button">View more</button>
+            <button class="btn border border-dark rounded px-4 py-2 fw-bold">View more</button>
         </div>
     </section>
 

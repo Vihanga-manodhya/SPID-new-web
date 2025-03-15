@@ -5,278 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Add Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <style>
-        .news-section {
-            width: 100%;
-            max-width: 1920px;
-            margin: 0 auto;
-            padding: 20px;
+        /* Only styles that can't be achieved with Bootstrap */
+        .header-line {
+            height: 1px;
+            background-color: #777;
+            width: 233px;
         }
         
-        .news-items {
-            display: block;
-            padding: 40px;
-            background-color: #fff;
+        @media (max-width: 991px) {
+            .header-line { width: 150px; }
         }
         
+        @media (max-width: 640px) {
+            .header-line { width: 80px; }
+        }
+
         .news-item {
-            padding: 20px 30px;
-            background-color: #fff;
             border-left: 2px solid #ddd;
             border-right: 2px solid #ddd;
-            margin: 0;
         }
 
-        .news-item:last-child {
-            border-right: 2px solid #ddd;
-        }
-
-        .owl-item {
-            margin: 0 -1px; /* Fix double border between items */
-        }
-
-        @media (min-width: 1920px) {
-            .news-section {
-                padding: 40px 60px;
-            }
-            .news-items {
-                padding: 60px;
-            }
-        }
-
-        @media (max-width: 1366px) {
-            .news-section {
-                max-width: 100%;
-                padding: 20px;
-            }
-            .news-items {
-                padding: 30px;
-            }
-            .news-item {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .news-items {
-                flex-direction: column;
-            }
-            .news-item {
-                flex: 0 0 100%;
-                min-height: 150px;
-            }
-        }
-
-        .news-header {
-          width: 100%;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          margin-bottom: 40px;
-          gap: 20px;
-        }
-        .news-header-line-right {
-          height: 1px;
-          width: 233px;
-          position: relative;
-          background-color: #777;
-        }
-        @media (max-width: 991px) {
-          .news-header-line-right {
-            width: 150px;
-          }
-        }
-        @media (max-width: 640px) {
-          .news-header-line-right {
-            width: 80px;
-          }
-        }
-        .news-title {
-          color: #000;
-          font: 700 36px Montserrat, sans-serif;
-        }
-        @media (max-width: 991px) {
-          .news-title {
-            font-size: 32px;
-          }
-        }
-        @media (max-width: 640px) {
-          .news-title {
-            font-size: 24px;
-          }
-        }
-        .news-header-line-left {
-          height: 1px;
-          width: 233px;
-          position: relative;
-          background-color: #777;
-        }
-        @media (max-width: 991px) {
-          .news-header-line-left {
-            width: 150px;
-          }
-        }
-        @media (max-width: 640px) {
-          .news-header-line-left {
-            width: 80px;
-          }
-        }
-        @media (max-width: 991px) {
-          .news-header {
-            gap: 15px;
-          }
-          .news-header-line-right,
-          .news-header-line-left {
-            width: 150px;
-          }
-        }
-        @media (max-width: 640px) {
-          .news-header {
-            gap: 10px;
-          }
-          .news-header-line-right,
-          .news-header-line-left {
-            width: 80px;
-          }
-        }
-        .news-carousel {
-          width: 100%;
-          padding: 0;
-        }
-        @media (max-width: 640px) {
-          .news-carousel {
-            padding: 0 20px;
-          }
-        }
-        .nav-arrow {
-          display: none;
-        }
-        .news-content {
-          padding: 0;
-          margin: 0;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        .news-headline {
-          color: #000;
-          font: 700 16px/20px Montserrat, sans-serif;
-        }
-        @media (max-width: 640px) {
-          .news-headline {
-            font-size: 14px;
-            line-height: 18px;
-          }
-        }
-        .news-date {
-          color: #000;
-          font: 400 14px Montserrat, sans-serif;
-        }
-        @media (max-width: 640px) {
-          .news-date {
-            font-size: 12px;
-          }
-        }
-        .news-source {
-          color: #000;
-          font: 500 14px Montserrat, sans-serif;
-        }
-        @media (max-width: 640px) {
-          .news-source {
-            font-size: 12px;
-          }
-        }
-        .view-more-container {
-          width: 100%;
-          height: 119px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: #fff;
-        }
-        .view-more-button {
-          width: 140px;
-          height: 50px;
-          border: 1px solid #000;
-          border-radius: 5px;
-          background: transparent;
-          color: #000;
-          cursor: pointer;
-          font: 600 16px Montserrat, sans-serif;
-        }
-        @media (max-width: 640px) {
-          .view-more-button {
-            width: 120px;
-            height: 45px;
-            font-size: 14px;
-          }
-        }
-        .visually-hidden {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border: 0;
-        }
-      </style>
+        .owl-item { margin: 0 -1px; }
+    </style>
 </head>
 <body>
-    
-      
-      <section class="news-section container-fluid">
+    <section class="container-fluid px-4 py-5">
         <div class="row">
             <div class="col-12">
-                <header class="news-header">
-                  <div class="news-header-line-right" aria-hidden="true"></div>
-                  <h2 class="news-title">NEWS</h2>
-                  <div class="news-header-line-left" aria-hidden="true"></div>
+                <header class="d-flex align-items-center justify-content-center gap-4 mb-5">
+                    <div class="header-line" aria-hidden="true"></div>
+                    <h2 class="h2 fw-bold m-0">NEWS</h2>
+                    <div class="header-line" aria-hidden="true"></div>
                 </header>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-12">
-                <div class="news-carousel">
-                    <div class="news-items owl-carousel owl-theme" id="newsItems">
-                        <article class="news-item">
-                            <div class="news-content">
-                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
-                                <p class="news-date">Published on: 2025-03-01</p>
-                                <p class="news-source">Irrigation Department Head Office</p>
+                <div class="news-carousel p-0">
+                    <div class="news-items owl-carousel owl-theme bg-white p-4" id="newsItems">
+                        <article class="news-item p-4">
+                            <div class="d-flex flex-column justify-content-between h-100">
+                                <h3 class="fw-bold fs-6 mb-3">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
+                                <div>
+                                    <p class="mb-2 fs-7">Published on: 2025-03-01</p>
+                                    <p class="m-0 fw-500 fs-7">Irrigation Department Head Office</p>
+                                </div>
                             </div>
                         </article>
-                        <article class="news-item">
-                            <div class="news-content">
-                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
-                                <p class="news-date">Published on: 2025-03-01</p>
-                                <p class="news-source">Irrigation Department Head Office</p>
+                        <article class="news-item p-4">
+                            <div class="d-flex flex-column justify-content-between h-100">
+                                <h3 class="fw-bold fs-6 mb-3">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
+                                <div>
+                                    <p class="mb-2 fs-7">Published on: 2025-03-01</p>
+                                    <p class="m-0 fw-500 fs-7">Irrigation Department Head Office</p>
+                                </div>
                             </div>
                         </article>
-                        <article class="news-item">
-                            <div class="news-content">
-                                <h3 class="news-headline">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025</h3>
-                                <p class="news-date">Published on: 2025-03-01</p>
-                                <p class="news-source">Irrigation Department Head Office</p>
+                        <article class="news-item p-4">
+                            <div class="d-flex flex-column justify-content-between h-100">
+                                <h3 class="fw-bold fs-6 mb-3">CALL FOR PROPOSALS: SUSTAINABLE IRRIGATION PROJECTS 2025 </h3>
+                                <div>
+                                    <p class="mb-2 fs-7">Published on: 2025-03-01</p>
+                                    <p class="m-0 fw-500 fs-7">Irrigation Department Head Office</p>
+                                </div>
                             </div>
                         </article>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="view-more-container">
-          <button class="view-more-button">View more</button>
+        
+        <div class="d-flex justify-content-center align-items-center py-4">
+            <button class="btn btn-outline-dark px-4 py-3 fw-semibold">View more</button>
         </div>
-      </section>
-    <!-- Add jQuery and Owl Carousel JS -->
+    </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
